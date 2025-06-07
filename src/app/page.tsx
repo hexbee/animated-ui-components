@@ -1,8 +1,76 @@
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Animated UI Components - 精美的React组件库",
+    description: "探索8个精美的UI组件：Text Shimmer文字闪烁、Gradient Text渐变文字、macOS Dock交互、3D登录卡片、Hero Futuristic、流体光标效果等。基于Next.js 15、React 19、TypeScript和Tailwind CSS构建的现代化组件展示平台。",
+    keywords: ["React组件", "UI组件库", "Next.js", "TypeScript", "Tailwind CSS", "动画效果", "3D效果", "交互设计"],
+    openGraph: {
+        title: "Animated UI Components - 精美的React组件库",
+        description: "探索8个精美的UI组件，包含文字动画、3D效果、交互设计等现代化组件展示平台",
+        url: "http://localhost:3000",
+        images: [
+            {
+                url: "/og-image.png",
+                width: 1200,
+                height: 630,
+                alt: "Animated UI Components 主页",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Animated UI Components - 精美的React组件库",
+        description: "探索8个精美的UI组件，包含文字动画、3D效果、交互设计等现代化组件展示平台",
+        images: ["/og-image.png"],
+    },
+    alternates: {
+        canonical: "http://localhost:3000",
+    },
+};
 
 export default function Home() {
+    // JSON-LD 结构化数据
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "Animated UI Components",
+        description: "精美的React组件库，包含8个现代化UI组件展示",
+        url: "http://localhost:3000",
+        author: {
+            "@type": "Organization",
+            name: "UI Components Demo",
+        },
+        mainEntity: {
+            "@type": "SoftwareApplication",
+            name: "Animated UI Components",
+            applicationCategory: "DeveloperApplication",
+            operatingSystem: "Web Browser",
+            description: "基于Next.js 15、React 19、TypeScript和Tailwind CSS构建的现代化UI组件展示平台",
+            offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "USD",
+            },
+            featureList: [
+                "Text Shimmer 文字闪烁效果",
+                "Gradient Text 渐变文字",
+                "macOS Dock 交互效果",
+                "3D 登录注册卡片",
+                "Hero Futuristic 未来主义组件",
+                "Splash Cursor 流体光标",
+                "Background Gradient 背景渐变动画",
+            ],
+        },
+    };
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center p-8">
+        <>
+            {/* JSON-LD 结构化数据 */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center p-8">
             <div className="max-w-4xl mx-auto text-center space-y-12">
                 {/* 主标题 */}
                 <div className="space-y-6">
@@ -217,5 +285,6 @@ export default function Home() {
                 </div>
             </div>
         </div>
+        </>
     );
 }

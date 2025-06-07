@@ -5,7 +5,29 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Text Shimmer - 文字闪烁动画效果 | Animated UI Components",
   description: "探索Text Shimmer组件的各种文字闪烁动画效果，支持自定义颜色、动画速度和深色模式。基于Framer Motion构建的高性能文字动画组件。",
-  keywords: "Text Shimmer, 文字动画, 闪烁效果, React组件, Framer Motion, 自定义颜色",
+  keywords: ["Text Shimmer", "文字动画", "闪烁效果", "React组件", "Framer Motion", "自定义颜色", "动画效果", "UI组件"],
+  openGraph: {
+    title: "Text Shimmer - 文字闪烁动画效果 | Animated UI Components",
+    description: "探索Text Shimmer组件的各种文字闪烁动画效果，支持自定义颜色、动画速度和深色模式",
+    url: "http://localhost:3000/text-shimmer",
+    images: [
+      {
+        url: "/og-text-shimmer.png",
+        width: 1200,
+        height: 630,
+        alt: "Text Shimmer 文字闪烁动画效果演示",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Text Shimmer - 文字闪烁动画效果",
+    description: "探索Text Shimmer组件的各种文字闪烁动画效果，支持自定义颜色、动画速度和深色模式",
+    images: ["/og-text-shimmer.png"],
+  },
+  alternates: {
+    canonical: "http://localhost:3000/text-shimmer",
+  },
 };
 
 export default function TextShimmerPage() {

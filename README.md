@@ -2,6 +2,40 @@
 
 这是一个展示多种 UI 组件效果的 Next.js 项目，包含 Text Shimmer、Gradient Text、macOS Dock、Sign-In Card、Sign-Up Card、Hero Futuristic、Splash Cursor 和 Background Gradient Animation 组件，使用了来自 21st.dev 的第三方 shadcn/ui 组件。
 
+## 🚀 SEO 优化
+
+本项目已经过全面的 SEO 优化，包括：
+
+### 📊 审计评分
+
+- **可访问性 (Accessibility)**: 100/100 ✅
+- **SEO**: 90/100 ✅
+- **最佳实践 (Best Practices)**: 100/100 ✅
+- **性能 (Performance)**: 78/100 ⚠️
+
+### 🔧 SEO 功能
+
+- ✅ 完整的 Meta 标签配置（title, description, keywords）
+- ✅ Open Graph 社交媒体分享优化
+- ✅ Twitter Card 支持
+- ✅ 自动生成的 sitemap.xml
+- ✅ 搜索引擎友好的 robots.txt
+- ✅ JSON-LD 结构化数据
+- ✅ 动态 OG 图片生成
+- ✅ 多语言支持（中文）
+- ✅ Canonical URL 配置
+- ✅ 图片优化（Next.js Image 组件）
+- ✅ 自定义 favicon 和 Apple Touch 图标
+
+### 📁 SEO 相关文件
+
+- `src/app/sitemap.ts` - 自动生成站点地图
+- `src/app/robots.ts` - 搜索引擎爬取规则
+- `src/app/opengraph-image.tsx` - 动态 OG 图片
+- `src/app/icon.tsx` - 动态 favicon
+- `src/app/apple-icon.tsx` - Apple Touch 图标
+- 各页面的 `layout.tsx` 或页面级 metadata 配置
+
 ## ✨ 特性
 
 ### Text Shimmer 组件

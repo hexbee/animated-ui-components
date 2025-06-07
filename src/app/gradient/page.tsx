@@ -1,5 +1,34 @@
 import { GradientText } from "@/components/ui/gradient-text";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Gradient Text - 动态渐变文字效果 | Animated UI Components",
+  description: "探索 GradientText 组件的动态渐变文字效果，支持多彩渐变背景动画、混合模式渲染和无限循环动画。为您的应用添加令人惊艳的视觉体验。",
+  keywords: ["Gradient Text", "渐变文字", "动态渐变", "文字动画", "React组件", "Framer Motion", "混合模式", "UI组件"],
+  openGraph: {
+    title: "Gradient Text - 动态渐变文字效果 | Animated UI Components",
+    description: "探索 GradientText 组件的动态渐变文字效果，支持多彩渐变背景动画和混合模式渲染",
+    url: "http://localhost:3000/gradient",
+    images: [
+      {
+        url: "/og-gradient-text.png",
+        width: 1200,
+        height: 630,
+        alt: "Gradient Text 动态渐变文字效果演示",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gradient Text - 动态渐变文字效果",
+    description: "探索 GradientText 组件的动态渐变文字效果，支持多彩渐变背景动画和混合模式渲染",
+    images: ["/og-gradient-text.png"],
+  },
+  alternates: {
+    canonical: "http://localhost:3000/gradient",
+  },
+};
 
 export default function GradientPage() {
     return (
