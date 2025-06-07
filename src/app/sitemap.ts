@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next'
+import { getBaseUrl } from '@/lib/config'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'http://localhost:3000'
+    const baseUrl = getBaseUrl()
     const currentDate = new Date()
 
     // 静态页面

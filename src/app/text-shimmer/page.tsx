@@ -1,6 +1,7 @@
 import { TextShimmer } from "@/components/ui/text-shimmer";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { getFullUrl } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Text Shimmer - 文字闪烁动画效果 | Animated UI Components",
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Text Shimmer - 文字闪烁动画效果 | Animated UI Components",
     description: "探索Text Shimmer组件的各种文字闪烁动画效果，支持自定义颜色、动画速度和深色模式",
-    url: "http://localhost:3000/text-shimmer",
+    url: getFullUrl("/text-shimmer"),
     images: [
       {
         url: "/og-text-shimmer.png",
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     images: ["/og-text-shimmer.png"],
   },
   alternates: {
-    canonical: "http://localhost:3000/text-shimmer",
+    canonical: getFullUrl("/text-shimmer"),
   },
 };
 

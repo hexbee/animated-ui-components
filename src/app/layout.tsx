@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { siteConfig } from "@/lib/config";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,11 +19,11 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("http://localhost:3000"),
-  title: "Animated UI Components - 精美的React组件库",
-  description: "探索8个精美的UI组件：Text Shimmer文字闪烁、Gradient Text渐变文字、macOS Dock交互、3D登录卡片、Hero Futuristic、流体光标效果等。基于Next.js 15、React 19、TypeScript和Tailwind CSS构建的现代化组件展示平台。",
+  metadataBase: new URL(siteConfig.url),
+  title: `${siteConfig.name} - 精美的React组件库`,
+  description: siteConfig.description,
   keywords: ["React组件", "UI组件库", "Next.js", "TypeScript", "Tailwind CSS", "动画效果", "3D效果", "交互设计", "shadcn/ui", "Framer Motion"],
-  authors: [{ name: "UI Components Demo", url: "http://localhost:3000" }],
+  authors: [{ name: "UI Components Demo", url: siteConfig.url }],
   creator: "UI Components Demo",
   publisher: "UI Components Demo",
   robots: {
@@ -39,9 +40,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "zh_CN",
-    url: "http://localhost:3000",
-    siteName: "Animated UI Components",
-    title: "Animated UI Components - 精美的React组件库",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: `${siteConfig.name} - 精美的React组件库`,
     description: "探索8个精美的UI组件，包含文字动画、3D效果、交互设计等现代化组件展示平台。基于Next.js 15、React 19构建。",
     images: [
       {
@@ -55,14 +56,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Animated UI Components - 精美的React组件库",
+    title: `${siteConfig.name} - 精美的React组件库`,
     description: "探索8个精美的UI组件，包含文字动画、3D效果、交互设计等现代化组件展示平台",
     images: ["/og-image.png"],
-    creator: "@ui_components",
-    site: "@ui_components",
+    creator: siteConfig.twitterHandle,
+    site: siteConfig.twitterHandle,
   },
   alternates: {
-    canonical: "http://localhost:3000",
+    canonical: siteConfig.url,
   },
   category: "technology",
 };

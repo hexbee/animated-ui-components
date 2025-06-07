@@ -1,6 +1,7 @@
 import { GradientText } from "@/components/ui/gradient-text";
 import Link from "next/link";
 import { Metadata } from "next";
+import { getFullUrl } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Gradient Text - 动态渐变文字效果 | Animated UI Components",
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Gradient Text - 动态渐变文字效果 | Animated UI Components",
     description: "探索 GradientText 组件的动态渐变文字效果，支持多彩渐变背景动画和混合模式渲染",
-    url: "http://localhost:3000/gradient",
+    url: getFullUrl("/gradient"),
     images: [
       {
         url: "/og-gradient-text.png",
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     images: ["/og-gradient-text.png"],
   },
   alternates: {
-    canonical: "http://localhost:3000/gradient",
+    canonical: getFullUrl("/gradient"),
   },
 };
 

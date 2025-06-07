@@ -126,6 +126,31 @@
 
 ## 🚀 快速开始
 
+### 环境配置
+
+1. 复制环境变量配置文件：
+
+```bash
+cp .env.example .env.local
+```
+
+2. 根据需要修改 `.env.local` 中的配置：
+
+```bash
+# 应用基础URL（开发环境）
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+
+# 生产环境示例
+# NEXT_PUBLIC_BASE_URL=https://yourdomain.com
+
+# 站点信息
+NEXT_PUBLIC_SITE_NAME="Animated UI Components"
+NEXT_PUBLIC_SITE_DESCRIPTION="探索8个精美的UI组件..."
+
+# 社交媒体
+NEXT_PUBLIC_TWITTER_HANDLE="@ui_components"
+```
+
 ### 安装依赖
 
 ```bash
@@ -146,25 +171,27 @@ yarn dev
 pnpm dev
 ```
 
-打开 [http://localhost:3000](http://localhost:3000) 查看效果。
+打开 [http://localhost:3000](http://localhost:3000) 查看效果（或您在 `.env.local` 中配置的 URL）。
 
 ## � 页面导航
 
-- **主页** - http://localhost:3000 - 组件展示和导航中心
-- **Text Shimmer** - http://localhost:3000/text-shimmer - 文字闪烁动画效果
-- **Gradient Text** - http://localhost:3000/gradient - 渐变文字效果
-- **macOS Dock** - http://localhost:3000/dock - macOS Dock 交互效果
-- **Sign-In Card** - http://localhost:3000/sign-in - 3D 登录卡片
-- **Sign-Up Card** - http://localhost:3000/signup - 3D 注册卡片
-- **Hero Futuristic** - http://localhost:3000/hero - 未来主义英雄区域
-- **Splash Cursor** - http://localhost:3000/splash - 流体动力学光标效果
-- **Background Gradient** - http://localhost:3000/background-gradient/simple - 背景渐变动画效果
+> **注意**: 以下链接使用默认的开发环境地址。如果您修改了 `.env.local` 中的 `NEXT_PUBLIC_BASE_URL`，请相应调整 URL。
+
+- **主页** - `/` - 组件展示和导航中心
+- **Text Shimmer** - `/text-shimmer` - 文字闪烁动画效果
+- **Gradient Text** - `/gradient` - 渐变文字效果
+- **macOS Dock** - `/dock` - macOS Dock 交互效果
+- **Sign-In Card** - `/sign-in` - 3D 登录卡片
+- **Sign-Up Card** - `/signup` - 3D 注册卡片
+- **Hero Futuristic** - `/hero` - 未来主义英雄区域
+- **Splash Cursor** - `/splash` - 流体动力学光标效果
+- **Background Gradient** - `/background-gradient/simple` - 背景渐变动画效果
 
 ### 背景渐变动画子页面
 
-- **简单示例** - http://localhost:3000/background-gradient/simple - 基础背景渐变效果
-- **多种配置** - http://localhost:3000/background-gradient/examples - 各种配置选项展示
-- **测试页面** - http://localhost:3000/background-gradient/test - 快速测试页面
+- **简单示例** - `/background-gradient/simple` - 基础背景渐变效果
+- **多种配置** - `/background-gradient/examples` - 各种配置选项展示
+- **测试页面** - `/background-gradient/test` - 快速测试页面
 
 ## �📦 组件安装
 

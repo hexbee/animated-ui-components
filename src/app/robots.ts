@@ -1,6 +1,9 @@
 import { MetadataRoute } from 'next'
+import { getBaseUrl } from '@/lib/config'
 
 export default function robots(): MetadataRoute.Robots {
+    const baseUrl = getBaseUrl()
+
     return {
         rules: [
             {
@@ -23,7 +26,7 @@ export default function robots(): MetadataRoute.Robots {
                 ],
             },
         ],
-        sitemap: 'http://localhost:3000/sitemap.xml',
-        host: 'http://localhost:3000',
+        sitemap: `${baseUrl}/sitemap.xml`,
+        host: baseUrl,
     }
 }

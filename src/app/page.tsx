@@ -1,14 +1,15 @@
 import Link from "next/link";
 import { Metadata } from "next";
+import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
-    title: "Animated UI Components - 精美的React组件库",
-    description: "探索8个精美的UI组件：Text Shimmer文字闪烁、Gradient Text渐变文字、macOS Dock交互、3D登录卡片、Hero Futuristic、流体光标效果等。基于Next.js 15、React 19、TypeScript和Tailwind CSS构建的现代化组件展示平台。",
+    title: `${siteConfig.name} - 精美的React组件库`,
+    description: siteConfig.description,
     keywords: ["React组件", "UI组件库", "Next.js", "TypeScript", "Tailwind CSS", "动画效果", "3D效果", "交互设计"],
     openGraph: {
-        title: "Animated UI Components - 精美的React组件库",
+        title: `${siteConfig.name} - 精美的React组件库`,
         description: "探索8个精美的UI组件，包含文字动画、3D效果、交互设计等现代化组件展示平台",
-        url: "http://localhost:3000",
+        url: siteConfig.url,
         images: [
             {
                 url: "/og-image.png",
@@ -20,12 +21,12 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Animated UI Components - 精美的React组件库",
+        title: `${siteConfig.name} - 精美的React组件库`,
         description: "探索8个精美的UI组件，包含文字动画、3D效果、交互设计等现代化组件展示平台",
         images: ["/og-image.png"],
     },
     alternates: {
-        canonical: "http://localhost:3000",
+        canonical: siteConfig.url,
     },
 };
 
@@ -34,16 +35,16 @@ export default function Home() {
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        name: "Animated UI Components",
+        name: siteConfig.name,
         description: "精美的React组件库，包含8个现代化UI组件展示",
-        url: "http://localhost:3000",
+        url: siteConfig.url,
         author: {
             "@type": "Organization",
             name: "UI Components Demo",
         },
         mainEntity: {
             "@type": "SoftwareApplication",
-            name: "Animated UI Components",
+            name: siteConfig.name,
             applicationCategory: "DeveloperApplication",
             operatingSystem: "Web Browser",
             description: "基于Next.js 15、React 19、TypeScript和Tailwind CSS构建的现代化UI组件展示平台",
