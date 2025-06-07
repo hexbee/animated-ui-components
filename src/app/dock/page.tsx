@@ -54,12 +54,7 @@ const sampleApps = [
 ];
 
 const DockDemo: React.FC = () => {
-  const [mounted, setMounted] = useState(false);
   const [openApps, setOpenApps] = useState<string[]>(['finder', 'safari']);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const handleAppClick = (appId: string) => {
     console.log('App clicked:', appId);

@@ -147,14 +147,14 @@ export default function GradientPage() {
                         <div>
                             <h3 className="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">安装</h3>
                             <div className="bg-gray-100 dark:bg-gray-700 rounded p-4 font-mono text-sm">
-                                <code>npx shadcn@latest add "https://21st.dev/r/designali-in/gradient-text?api_key=YOUR_API_KEY"</code>
+                                <code>npx shadcn@latest add &quot;https://21st.dev/r/designali-in/gradient-text?api_key=YOUR_API_KEY&quot;</code>
                             </div>
                         </div>
                         
                         <div>
                             <h3 className="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">导入</h3>
                             <div className="bg-gray-100 dark:bg-gray-700 rounded p-4 font-mono text-sm">
-                                <code>import {`{ GradientText }`} from "@/components/ui/gradient-text";</code>
+                                <code>import {`{ GradientText }`} from &quot;@/components/ui/gradient-text&quot;;</code>
                             </div>
                         </div>
 
@@ -180,7 +180,7 @@ export default function GradientPage() {
                                         <tr className="border-b border-gray-100 dark:border-gray-700">
                                             <td className="py-2 px-4"><code>as</code></td>
                                             <td className="py-2 px-4">ElementType</td>
-                                            <td className="py-2 px-4">"span"</td>
+                                            <td className="py-2 px-4">&quot;span&quot;</td>
                                             <td className="py-2 px-4">HTML 元素类型</td>
                                         </tr>
                                         <tr className="border-b border-gray-100 dark:border-gray-700">

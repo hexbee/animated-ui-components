@@ -8,6 +8,8 @@ export function GradientTextDemo() {
     );
 }
 
-export default {
+const GradientTextDemoExports = {
     GradientTextDemo
 };
+
+export default GradientTextDemoExports;

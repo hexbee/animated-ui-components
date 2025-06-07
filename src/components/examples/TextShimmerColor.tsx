@@ -11,6 +11,8 @@ function TextShimmerColor() {
     );
 }
 
-export default {
+const TextShimmerColorExports = {
     TextShimmerColor
 };
+
+export default TextShimmerColorExports;

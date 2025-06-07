@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence, useMotionValue, useTransform } from 'framer-motion';
 import { Mail, Lock,Eye,EyeClosed, ArrowRight } from 'lucide-react';
@@ -27,9 +27,8 @@ export function Component() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [focusedInput, setFocusedInput] = useState(null);
+  const [focusedInput, setFocusedInput] = useState<string | null>(null);
   const [rememberMe, setRememberMe] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   // For 3D card effect - increased rotation range for more pronounced 3D effect
   const mouseX = useMotionValue(0);
@@ -41,7 +40,6 @@ export function Component() {
     const rect = e.currentTarget.getBoundingClientRect();
     mouseX.set(e.clientX - rect.left - rect.width / 2);
     mouseY.set(e.clientY - rect.top - rect.height / 2);
-    setMousePosition({ x: e.clientX, y: e.clientY });
   };
 
   const handleMouseLeave = () => {
@@ -49,11 +47,7 @@ export function Component() {
     mouseY.set(0);
   };
 
-  const handleSubmit = (event: React.MouseEvent) => {
-    event.preventDefault();
-    setIsLoading(true);
-    setTimeout(() => setIsLoading(false), 2000);
-  };
+
 
   return (
     <div className="min-h-screen w-screen bg-black relative overflow-hidden flex items-center justify-center">
@@ -381,7 +375,7 @@ export function Component() {
                           placeholder="Email address"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
-                          onFocus={() => setFocusedInput("email" as any)}
+                          onFocus={() => setFocusedInput("email")}
                           onBlur={() => setFocusedInput(null)}
                           className="w-full bg-white/5 border-transparent focus:border-white/20 text-white placeholder:text-white/30 h-10 transition-all duration-300 pl-10 pr-3 focus:bg-white/10"
                         />
@@ -419,7 +413,7 @@ export function Component() {
                           placeholder="Password"
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
-                          onFocus={() => setFocusedInput("password" as any)}
+                          onFocus={() => setFocusedInput("password")}
                           onBlur={() => setFocusedInput(null)}
                           className="w-full bg-white/5 border-transparent focus:border-white/20 text-white placeholder:text-white/30 h-10 transition-all duration-300 pl-10 pr-10 focus:bg-white/10"
                         />
@@ -596,7 +590,7 @@ export function Component() {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
                 >
-                  Don't have an account?{' '}
+                  Don&apos;t have an account?{' '}
                   <Link 
                     href="/signup" 
                     className="relative inline-block group/signup"
