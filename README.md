@@ -1,6 +1,6 @@
 # UI Components 演示项目
 
-这是一个展示多种 UI 组件效果的 Next.js 项目，包含 Text Shimmer、Gradient Text、macOS Dock、Sign-In Card、Sign-Up Card、Hero Futuristic 和 Splash Cursor 组件，使用了来自 21st.dev 的第三方 shadcn/ui 组件。
+这是一个展示多种 UI 组件效果的 Next.js 项目，包含 Text Shimmer、Gradient Text、macOS Dock、Sign-In Card、Sign-Up Card、Hero Futuristic、Splash Cursor 和 Background Gradient Animation 组件，使用了来自 21st.dev 的第三方 shadcn/ui 组件。
 
 ## ✨ 特性
 
@@ -73,6 +73,17 @@
 - 🎭 **全屏覆盖** - 固定定位的全屏流体效果层
 - 🔧 **可配置参数** - 支持自定义模拟精度和视觉效果
 
+### Background Gradient Animation 组件
+
+- 🎨 **动态渐变背景** - 美丽的多色彩渐变动画效果
+- 🖱️ **鼠标交互** - 可选的鼠标跟随和交互效果
+- 🎭 **多种混合模式** - 支持不同的颜色混合和渲染模式
+- 🌈 **自定义颜色** - 完全可配置的渐变颜色和动画参数
+- 📱 **响应式设计** - 自动适配各种屏幕尺寸和设备
+- ⚡ **高性能渲染** - 使用 CSS 动画和 GPU 加速优化
+- 🌙 **浏览器兼容** - 针对 Safari 等浏览器特别优化
+- 🔧 **灵活配置** - 支持自定义尺寸、速度和视觉效果
+
 ### 通用特性
 
 - 🚀 **TypeScript 支持** - 完整的类型安全
@@ -113,6 +124,13 @@ pnpm dev
 - **Sign-Up Card** - http://localhost:3000/signup - 3D 注册卡片
 - **Hero Futuristic** - http://localhost:3000/hero - 未来主义英雄区域
 - **Splash Cursor** - http://localhost:3000/splash - 流体动力学光标效果
+- **Background Gradient** - http://localhost:3000/background-gradient/simple - 背景渐变动画效果
+
+### 背景渐变动画子页面
+
+- **简单示例** - http://localhost:3000/background-gradient/simple - 基础背景渐变效果
+- **多种配置** - http://localhost:3000/background-gradient/examples - 各种配置选项展示
+- **测试页面** - http://localhost:3000/background-gradient/test - 快速测试页面
 
 ## �📦 组件安装
 
@@ -168,6 +186,13 @@ npm install three @react-three/fiber @react-three/drei
 ```bash
 # 添加 Splash Cursor 组件
 npx shadcn@latest add "https://21st.dev/r/davidhzdev/splash-cursor?api_key=YOUR_API_KEY"
+```
+
+### Background Gradient Animation 组件
+
+```bash
+# 添加 Background Gradient Animation 组件
+npx shadcn@latest add "https://21st.dev/r/aceternity/background-gradient-animation?api_key=YOUR_API_KEY"
 ```
 
 ## 🎯 基本用法
@@ -298,6 +323,24 @@ export default function SplashExample() {
       <SplashCursor />
       {/* Your content here */}
     </div>
+  );
+}
+```
+
+### Background Gradient Animation 组件
+
+```tsx
+import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
+
+export default function BackgroundExample() {
+  return (
+    <BackgroundGradientAnimation>
+      <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl">
+        <p className="bg-clip-text text-transparent drop-shadow-2xl bg-gradient-to-b from-white/80 to-white/20">
+          Gradients X Animations
+        </p>
+      </div>
+    </BackgroundGradientAnimation>
   );
 }
 ```
@@ -502,43 +545,73 @@ Splash Cursor 组件支持多种可配置参数来自定义流体效果：
 ```
 ui-test/
 ├── src/
-│   ├── app/
+│   ├── app/                      # Next.js App Router 页面
+│   │   ├── background-gradient/  # 背景渐变动画示例
+│   │   │   ├── examples/
+│   │   │   │   └── page.tsx      # 多种配置示例
+│   │   │   ├── simple/
+│   │   │   │   └── page.tsx      # 简单示例
+│   │   │   ├── test/
+│   │   │   │   └── page.tsx      # 测试页面
+│   │   │   ├── README.md         # 组件说明文档
+│   │   │   └── page.tsx          # 主示例页面
+│   │   ├── dock/
+│   │   │   └── page.tsx          # macOS Dock 示例页面
 │   │   ├── gradient/
-│   │   │   └── page.tsx          # GradientText 示例页面
-│   │   ├── text-shimmer/
-│   │   │   └── page.tsx          # Text Shimmer 示例页面
+│   │   │   └── page.tsx          # Gradient Text 示例页面
+│   │   ├── gradient-test/
+│   │   │   └── page.tsx          # Gradient Text 测试页面
+│   │   ├── hero/
+│   │   │   └── page.tsx          # Hero Futuristic 示例页面
 │   │   ├── sign-in/
 │   │   │   └── page.tsx          # Sign-In Card 示例页面
 │   │   ├── signup/
 │   │   │   └── page.tsx          # Sign-Up Card 示例页面
-│   │   ├── hero/
-│   │   │   └── page.tsx          # Hero Futuristic 示例页面
 │   │   ├── splash/
 │   │   │   └── page.tsx          # Splash Cursor 示例页面
-│   │   ├── dock/
-│   │   │   └── page.tsx          # macOS Dock 示例页面
-│   │   ├── globals.css
-│   │   ├── layout.tsx
+│   │   ├── text-shimmer/
+│   │   │   └── page.tsx          # Text Shimmer 示例页面
+│   │   ├── favicon.ico           # 网站图标
+│   │   ├── globals.css           # 全局样式
+│   │   ├── layout.tsx            # 根布局组件
 │   │   └── page.tsx              # 主页面
-│   ├── components/
-│   │   ├── examples/
+│   ├── components/               # React 组件
+│   │   ├── examples/             # 示例组件
+│   │   │   ├── background-gradient-animation-demo.tsx
+│   │   │   ├── DockDemo.tsx
+│   │   │   ├── GradientTextDemo.tsx
+│   │   │   ├── HeroDemo.tsx
+│   │   │   ├── SignInDemo.tsx
+│   │   │   ├── SignUpDemo.tsx
+│   │   │   ├── SplashDemo.tsx
 │   │   │   ├── TextShimmerColor.tsx
-│   │   │   └── GradientTextDemo.tsx
-│   │   └── ui/
-│   │       ├── text-shimmer.tsx  # TextShimmer 组件
-│   │       ├── gradient-text.tsx # GradientText 组件
-│   │       ├── mac-os-dock.tsx   # macOS Dock 组件
-│   │       ├── sign-in-card-2.tsx # Sign-In Card 2 组件
-│   │       ├── sign-up-card.tsx  # Sign-Up Card 组件
-│   │       ├── hero-futuristic.tsx # Hero Futuristic 组件
-│   │       └── splash-cursor.tsx # Splash Cursor 组件
-│   └── lib/
-│       └── utils.ts
-├── public/
-├── components.json
-├── package.json
-├── tailwind.config.ts
-└── tsconfig.json
+│   │   │   └── TextShimmerDemo.tsx
+│   │   └── ui/                   # UI 组件库
+│   │       ├── background-gradient-animation.tsx
+│   │       ├── gradient-text.tsx
+│   │       ├── hero-futuristic.tsx
+│   │       ├── mac-os-dock.tsx
+│   │       ├── sign-in-card-2.tsx
+│   │       ├── sign-up-card.tsx
+│   │       ├── splash-cursor.tsx
+│   │       └── text-shimmer.tsx
+│   └── lib/                      # 工具函数
+│       └── utils.ts              # 通用工具函数
+├── public/                       # 静态资源
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── next.svg
+│   ├── vercel.svg
+│   └── window.svg
+├── components.json               # shadcn/ui 配置
+├── eslint.config.mjs            # ESLint 配置
+├── next.config.ts               # Next.js 配置
+├── next-env.d.ts                # Next.js 类型定义
+├── package.json                 # 项目依赖
+├── package-lock.json            # 依赖锁定文件
+├── postcss.config.mjs           # PostCSS 配置
+├── tsconfig.json                # TypeScript 配置
+└── tsconfig.tsbuildinfo         # TypeScript 构建信息
 ```
 
 ## 🎨 自定义样式
