@@ -58,7 +58,7 @@ export default function Home() {
                         </Link>
                         <Link
                             href="/signup"
-                            className="inline-flex items-center px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-medium rounded-lg transition-colors duration-200"
+                            className="inline-flex items-center px-6 py-3 bg-teal-700 hover:bg-teal-800 text-white font-medium rounded-lg transition-colors duration-200"
                         >
                             注册卡片 📝
                         </Link>
@@ -70,7 +70,7 @@ export default function Home() {
                         </Link>
                         <Link
                             href="/splash"
-                            className="inline-flex items-center px-6 py-3 bg-cyan-600 hover:bg-cyan-700 text-white font-medium rounded-lg transition-colors duration-200"
+                            className="inline-flex items-center px-6 py-3 bg-cyan-700 hover:bg-cyan-800 text-white font-medium rounded-lg transition-colors duration-200"
                         >
                             流体光标 🌊
                         </Link>

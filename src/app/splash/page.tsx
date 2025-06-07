@@ -1,14 +1,40 @@
 'use client';
 
-import React from 'react';
-import { SplashCursor } from '@/components/ui/splash-cursor';
+import React, { Suspense } from 'react';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+
+// 懒加载SplashCursor组件以提高性能
+const SplashCursor = dynamic(
+  () => import('@/components/ui/splash-cursor').then(mod => ({ default: mod.SplashCursor })),
+  {
+    loading: () => (
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <div className="text-center text-white">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
+          <p className="text-lg">Loading Splash Cursor...</p>
+          <p className="text-sm text-white/60 mt-2">正在加载流体动力学组件</p>
+        </div>
+      </div>
+    ),
+    ssr: false // 禁用服务端渲染以避免WebGL问题
+  }
+);
 
 export default function SplashPage() {
     return (
         <div className="relative min-h-screen bg-black overflow-hidden">
             {/* Splash Cursor Component - 全屏流体效果 */}
-            <SplashCursor />
+            <Suspense fallback={
+              <div className="min-h-screen bg-black flex items-center justify-center">
+                <div className="text-center text-white">
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
+                  <p className="text-lg">Loading Splash Cursor...</p>
+                </div>
+              </div>
+            }>
+              <SplashCursor />
+            </Suspense>
             
             {/* Navigation */}
             <div className="absolute top-8 left-8 z-50">

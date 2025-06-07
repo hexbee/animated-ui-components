@@ -1,8 +1,25 @@
 'use client';
 
-import React from 'react';
-import { HeroFuturistic } from '@/components/ui/hero-futuristic';
+import React, { Suspense } from 'react';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
+
+// 懒加载Hero组件以提高性能
+const HeroFuturistic = dynamic(
+  () => import('@/components/ui/hero-futuristic').then(mod => ({ default: mod.HeroFuturistic })),
+  {
+    loading: () => (
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <div className="text-center text-white">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
+          <p className="text-lg">Loading Hero Futuristic...</p>
+          <p className="text-sm text-white/60 mt-2">正在加载3D渲染组件</p>
+        </div>
+      </div>
+    ),
+    ssr: false // 禁用服务端渲染以避免Three.js问题
+  }
+);
 
 export default function HeroPage() {
     return (
@@ -34,7 +51,16 @@ export default function HeroPage() {
             </div>
 
             {/* Hero Futuristic Component */}
-            <HeroFuturistic />
+            <Suspense fallback={
+              <div className="min-h-screen bg-black flex items-center justify-center">
+                <div className="text-center text-white">
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
+                  <p className="text-lg">Loading Hero Futuristic...</p>
+                </div>
+              </div>
+            }>
+              <HeroFuturistic />
+            </Suspense>
         </div>
     );
 }
